@@ -2,6 +2,7 @@ import { Environment, OrbitControls, PerspectiveCamera,  } from "@react-three/dr
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 import Model from './Untitled.jsx';
 import { Float } from "@react-three/drei";
+import { DirectionalLight } from "three";
 
 export default  function Three() {
    
@@ -9,8 +10,8 @@ export default  function Three() {
         <>
       <Float speed={10} > <PerspectiveCamera makeDefault position={[20, 0, -8]} /></Float>
         <OrbitControls maxDistance={20} maxPolarAngle={Math.PI/2} minPolarAngle={Math.PI/2.5}/>
-       <Model></Model>       
-       <Environment preset="sunset"/>
+       <Model></Model>   
+        <Environment preset="sunset"/>
        <ambientLight intensity={2}/>
      </>
     )
