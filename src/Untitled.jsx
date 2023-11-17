@@ -1,10 +1,9 @@
 import React, { useRef } from "react";
-import { useGLTF } from "@react-three/drei";
-
+import { Float, useGLTF } from "@react-three/drei";
 
 export default function Model(props) {
-  const { nodes, materials } = useGLTF("untitled4.glb");
-  return (
+  const { nodes, materials } = useGLTF("untitled.glb");
+  return ( <Float>
     <group {...props} dispose={null}>
       <mesh
         castShadow
@@ -63,11 +62,81 @@ export default function Model(props) {
         position={[0.275, -8.678, -0.169]}
         scale={-6.032}
       />
-    </group>
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes.Torus.geometry}
+        material={nodes.Torus.material}
+        position={[-5.209, 4.744, 5.292]}
+        rotation={[-2.836, 0.341, -1.018]}
+        scale={1.131}
+      />
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes.Torus001.geometry}
+        material={materials["Material.009"]}
+        position={[-2.155, 4.995, -5.007]}
+        rotation={[0.395, 0.213, -0.001]}
+      />
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes.Sphere.geometry}
+        material={materials["Material.011"]}
+        position={[-2.453, 3.877, 8.347]}
+        scale={1.085}
+      />
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes.Cylinder004.geometry}
+        material={nodes.Cylinder004.material}
+        position={[-2, 6.002, -0.146]}
+        rotation={[-0.764, 0.836, -0.111]}
+        scale={[-1.014, -0.213, -1.033]}
+      />
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes.Cone.geometry}
+        material={materials["Material.012"]}
+        position={[6.373, 5.82, 6.451]}
+        rotation={[-2.252, -0.533, -0.471]}
+        scale={[1, 1.54, 1]}
+      />
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes.Sphere001.geometry}
+        material={materials["Material.010"]}
+        position={[3.575, 4.578, -7.516]}
+      />
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes.Icosphere.geometry}
+        material={nodes.Icosphere.material}
+        position={[7.308, -0.021, 5.425]}
+      />
+      <mesh
+        castShadow
+        receiveShadow
+        geometry={nodes.Cone001.geometry}
+        material={nodes.Cone001.material}
+        position={[8.21, -0.651, -4.816]}
+        rotation={[0.166, 0.221, 0.627]}
+        scale={[1, 1.535, 1]}
+      />
+    </group></Float>
   );
 }
 
-useGLTF.preload("untitled4.glb");
+useGLTF.preload("untitled.glb");
+
+
+
+
 
 
 
